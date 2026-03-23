@@ -80,14 +80,23 @@ Click Predict
 ⚠️ Note
 Current prediction uses dummy data
 Can be upgraded to:
+
 📉 Machine Learning models (Linear Regression)
+
 🤖 AutoTS forecasting
+
 🧠 Deep Learning (LSTM)
+
 🚀 Future Improvements
+
 ✅ Real ML-based prediction
+
 ✅ Live crypto price integration
+
 ✅ User authentication
+
 ✅ Deploy on cloud (Render / Netlify)
+
 💡 Inspiration
 
 Built as a beginner-friendly AI + Web Dev project combining:
