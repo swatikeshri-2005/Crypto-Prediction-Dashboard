@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crypto AI Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+
+<header>
+    🚀 Crypto Prediction Dashboard
+</header>
+
+<div class="container">
+
+    <form method="POST">
+        <select name="crypto">
+            <option value="BTC-USD">Bitcoin</option>
+            <option value="ETH-USD">Ethereum</option>
+            <option value="DOGE-USD">Dogecoin</option>
+        </select>
+
+        <input type="number" name="days" value="30" min="7" max="60">
+
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if forecast %}
+    <h2>📊 Predictions</h2>
+
+    <div id="chart"></div>
+
+    <script>
+        const data = {{ forecast | tojson }};
+        
+        const dates = data.map(item => item.index);
+        const prices = data.map(item => item.Close);
+
+        var trace = {
+            x: dates,
+            y: prices,
+            type: 'scatter'
+        };
+
+        var layout = {
+            title: "Future Price Prediction"
+        };
+
+        Plotly.newPlot('chart', [trace], layout);
+    </script>
+    {% endif %}
+
+</div>
+
+</body>
+</html>
