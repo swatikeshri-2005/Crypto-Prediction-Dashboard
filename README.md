@@ -1,30 +1,30 @@
-🚀 Crypto AI Prediction Dashboard
+***🚀 Crypto AI Prediction Dashboard***
 
 A sleek Flask-based web app that predicts cryptocurrency prices and visualizes them with interactive charts.
 
-🌟 Preview
+*🌟 Preview*
 
-✨ Clean UI
+*✨ Clean UI*
 📊 Interactive charts
 ⚡ Real-time crypto data
 
-🧠 Features
+*🧠 Features*
 🔮 Future Price Prediction (custom days input)
 📈 Interactive Graphs using Plotly
-💰 Supports:
+*💰 Supports:*
 Bitcoin (BTC)
 Ethereum (ETH)
 Dogecoin (DOGE)
 ⚙️ Built with Flask backend
 🎨 Responsive & modern UI
 🛠️ Tech Stack
-Category	Tools Used
+*Category	Tools Used*
 Backend	Flask (Python)
 Data Handling	Pandas, NumPy
 API	yFinance
 Visualization	Plotly.js
 Frontend	HTML, CSS
-📂 Project Structure
+**📂 Project Structure**
 Crypto-Dashboard/
 │
 ├── app.py
