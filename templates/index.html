@@ -28,26 +28,41 @@
     {% if forecast %}
     <h2>📊 Predictions</h2>
 
+    <div id="loading">⏳ Predicting... please wait</div>
     <div id="chart"></div>
 
     <script>
-        const data = {{ forecast | tojson }};
-        
-        const dates = data.map(item => item.index);
-        const prices = data.map(item => item.Close);
+        const data = {{ forecast | tojson | safe }};
+        console.log("Forecast Data:", data); 
 
-        var trace = {
-            x: dates,
-            y: prices,
-            type: 'scatter'
-        };
+        if (data && data.length > 0) {
 
-        var layout = {
-            title: "Future Price Prediction"
-        };
+            const dates = data.map(item => item.index);
+            const prices = data.map(item => item.Close);
 
-        Plotly.newPlot('chart', [trace], layout);
+            var trace = {
+                x: dates,
+                y: prices,
+                mode: 'lines+markers',
+                type: 'scatter'
+            };
+
+            var layout = {
+                title: "Future Price Prediction",
+                paper_bgcolor: "#0f172a",
+                plot_bgcolor: "#0f172a",
+                font: { color: "white" }
+            };
+
+            Plotly.newPlot('chart', [trace], layout);
+
+            document.getElementById("loading").style.display = "none";
+
+        } else {
+            document.getElementById("chart").innerHTML = "No data available";
+        }
     </script>
+
     {% endif %}
 
 </div>

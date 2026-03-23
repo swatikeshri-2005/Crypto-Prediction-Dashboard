@@ -26,6 +26,7 @@ select, input, button {
     margin: 5px;
     border-radius: 8px;
     border: none;
+    font-size: 14px;
 }
 
 button {
@@ -36,4 +37,9 @@ button {
 
 button:hover {
     background: #16a34a;
+}
+
+#loading {
+    margin-top: 20px;
+    font-size: 18px;
 }
